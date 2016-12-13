@@ -1,0 +1,40 @@
+message Item {
+  enum Sex {
+    Female = 0;
+    Male = 1;
+    Kids = 2;
+  };
+  enum Category {
+    Hat = 0;
+    Pants = 1;
+    Shirt = 2;
+  }
+  required string id = 1;
+  optional string name = 9;
+  repeated Sex sex = 2;
+  repeated Category category = 3;
+  optional float price = 4;
+  repeated string photos = 5;
+  optional string description = 6;
+  optional string material = 7;
+  optional string color = 8;
+  // next id: 10
+}
+
+message Items {
+  repeated string id = 1;
+  // next id: 2
+}
+
+message Error {
+  optional string message = 1;
+  required uint32 code = 2;
+  // next id: 3
+}
+
+message Response {
+ optional Item item = 1;
+ optional Items items = 2;
+ optional Error error = 3;
+ // next id: 4
+}
